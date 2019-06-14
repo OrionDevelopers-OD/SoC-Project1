@@ -20,5 +20,11 @@ from SoC_Project1.core import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('departments/', views.department, name="department"),
+    path('subject/', views.subject, name="subject"),
+    path('question_papers/', views.questionppr, name="questionppr"),
+    path('notes/', views.notes, name="notes"),
+    path('upload/', views.upload, name="upload"),
+    path('request/', views.request, name="request"),
     path('admin/', admin.site.urls),
 ]
