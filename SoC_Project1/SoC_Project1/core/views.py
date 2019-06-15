@@ -6,9 +6,6 @@ def home(request):
 def department(request):
     return render(request, 'department.html')
 
-def subject(request):
-    return render(request, 'subject.html')
-
 def questionppr(request):
     return render(request, 'questionppr.html')
 
