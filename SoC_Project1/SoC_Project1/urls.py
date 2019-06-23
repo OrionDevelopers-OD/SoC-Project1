@@ -25,5 +25,5 @@ urlpatterns = [
     path('notes/', views.notes, name="notes"),
     path('upload/', views.upload, name="upload"),
     path('request/', views.request, name="request"),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls)
 ]
