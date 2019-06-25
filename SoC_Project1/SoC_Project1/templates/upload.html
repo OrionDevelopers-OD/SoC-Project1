@@ -1,19 +1,21 @@
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
+{%extends 'base.html' %}
+                {% block content %}
                 <!-- Page Heading -->
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800"><b>Upload Files</b></h1>
-                </div>
+                <h1 class="h3 mb-0 text-gray-800"><b>Upload Files</b></h1>
 
-                <!-- Divider -->
+                  <!-- Divider -->
                 <hr class="heading-divider">
-
-                <!-- django form to upload files -->
+                    <!-- django form to upload files -->
                 <h2>Upload</h2>
                   <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
                     <input type="file" name="document">
-                    <button type="submit">Upload file</button>
+                    <button type="submit" >Upload file</button>
+                    <button type="reset">Reset</button>
                   </form>
-                    <p>Uploaded file: <a href="{{ url }}">{{ url }}</a></p>
+                  {% endblock %}
+                    <p>Uploaded file: <a href="{{ url }}">'{{ url }}'</a></p>
             </div>

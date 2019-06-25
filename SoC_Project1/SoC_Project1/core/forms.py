@@ -1,5 +1,5 @@
 from django import forms
-class DepartmentForm(ModelForm):
-    class Meta:
-        model = Department
-        fields = ['dept']
+class DepartmentForm(forms.Form):
+    docfile = forms.FileField(
+        department = 'abc'
+    )
