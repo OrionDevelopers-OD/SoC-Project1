@@ -1,7 +1,9 @@
 from django.shortcuts import render,redirect
-from django.views.generic import TemplateView, ListView, CreateView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView
 from django.core.files.storage import FileSystemStorage
 from django.urls import reverse_lazy
+
+
 
 def home(request):
     return render(request, 'home.html')
@@ -27,11 +29,13 @@ def upload(request):
         uploaded_file = request.FILES['document']
         fs = FileSystemStorage()
         fs.save(uploaded_file.name, uploaded_file)
-        context['url'] = print(dir(fs))
+        context['url'] = fs.url(uploaded_file.name)
     return render(request, 'upload.html', context)
 
 def request(request):
     return render(request, 'request.html')
+
+##New  Creation
 
 #class CreateDepartmentView():
 #    model = Department
